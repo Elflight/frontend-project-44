@@ -29,4 +29,8 @@ const runGame = (description, generateRound) => {
     }
 }
 
-export {runGame as default};
+const getRandomNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+export {runGame, getRandomNumber};

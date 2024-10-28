@@ -1,4 +1,4 @@
-import runGame from '../index.js';
+import {runGame, getRandomNumber} from '../index.js';
 
 const description = 'What number is missing in the progression?';
 
@@ -26,10 +26,6 @@ const run = () => {
         const question = arProgression.join(' ');
 
         return [question, solution];
-    }
-
-    const getRandomNumber = (min, max) => {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     const generateProgression = (startNumber, step, progressionLength) => {

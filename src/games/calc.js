@@ -1,4 +1,4 @@
-import runGame from '../index.js';
+import {runGame, getRandomNumber} from '../index.js';
 
 const description = 'What is the result of the expression?';
 
@@ -28,10 +28,6 @@ const run = () => {
         const question = `${number1} ${action} ${number2}`;
 
         return [question, solution];
-    }
-
-    const getRandomNumber = (min, max) => {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     runGame(description, generateRound);
