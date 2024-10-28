@@ -13,7 +13,7 @@ const runGame = (description, generateRound) => {
         const [gameQuestion, solution] = generateRound();
         const answer = readlineSync.question(`Question: ${gameQuestion}\nYour answer: `);
 
-        if (Number(answer) === Number(solution)) {
+        if (String(answer) === String(solution)) {
             console.log('Correct!');
             ++successRounds;
         } else {
