@@ -5,7 +5,7 @@ const description = 'What number is missing in the progression?';
 const run = () => {
   const generateProgression = (startNumber, step, progressionLength) => {
     let arProgression = [];
-    for (let i = 0; i < progressionLength; ++i) {
+    for (let i = 0; i < progressionLength; i += 1) {
       arProgression.push(startNumber + i * step);
     }
 
@@ -40,4 +40,4 @@ const run = () => {
   runGame(description, generateRound);
 };
 
-export { run as default };
+export default run;

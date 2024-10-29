@@ -16,4 +16,4 @@ const run = () => {
   runGame(description, generateRound);
 };
 
-export { run as default };
+export default run;

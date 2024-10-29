@@ -9,13 +9,13 @@ const runGame = (description, generateRound) => {
   const roundCount = 3;
   let successRounds = 0;
 
-  for (let i = 0; i < roundCount; ++i) {
+  for (let i = 0; i < roundCount; i += 1) {
     const [gameQuestion, solution] = generateRound();
     const answer = readlineSync.question(`Question: ${gameQuestion}\nYour answer: `);
 
     if (String(answer) === String(solution)) {
       console.log('Correct!');
-      ++successRounds;
+      successRounds += 1;
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${solution}'.`);
       break;
@@ -29,8 +29,6 @@ const runGame = (description, generateRound) => {
   }
 };
 
-const getRandomNumber = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 export { runGame, getRandomNumber };
