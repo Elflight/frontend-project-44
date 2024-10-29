@@ -3,6 +3,15 @@ import { runGame, getRandomNumber } from '../index.js';
 const description = 'What number is missing in the progression?';
 
 const run = () => {
+  const generateProgression = (startNumber, step, progressionLength) => {
+    let arProgression = [];
+    for (let i = 0; i < progressionLength; ++i) {
+      arProgression.push(startNumber + i * step);
+    }
+
+    return arProgression;
+  };
+
   const generateRound = () => {
     const progressionLength = 10;
 
@@ -28,16 +37,7 @@ const run = () => {
     return [question, solution];
   };
 
-  const generateProgression = (startNumber, step, progressionLength) => {
-    let arProgression = [];
-    for (let i = 0; i < progressionLength; ++i) {
-      arProgression.push(startNumber + i * step);
-    }
-
-    return arProgression;
-  };
-
   runGame(description, generateRound);
-}
+};
 
 export { run as default };

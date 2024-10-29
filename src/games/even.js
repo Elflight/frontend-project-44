@@ -11,9 +11,9 @@ const run = () => {
     const solution = Number(question % 2 === 0) ? 'yes' : 'no';
 
     return [question, solution];
-  }
+  };
 
   runGame(description, generateRound);
 };
 
-export { run as default} ;
+export { run as default };

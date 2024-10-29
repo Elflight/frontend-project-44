@@ -3,6 +3,10 @@ import { runGame, getRandomNumber } from '../index.js';
 const description = 'Find the greatest common divisor of given numbers.';
 
 const run = () => {
+  const findGcd = (a, b) => {
+    return (a % b) ? findGcd(b, a % b) : b;
+  };
+
   const generateRound = () => {
     const minValue = 1;
     const maxValue = 100;
@@ -16,11 +20,7 @@ const run = () => {
     return [question, solution];
   };
 
-  const findGcd = (a, b) => {
-    return (a % b) ? findGcd(b, a % b) : b;
-  };
-
   runGame(description, generateRound);
-}
+};
 
 export { run as default };

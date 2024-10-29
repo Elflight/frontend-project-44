@@ -32,7 +32,7 @@ const run = () => {
     return [question, solution];
   };
 
-    runGame(description, generateRound);
+  runGame(description, generateRound);
 };
 
 export { run as default };
