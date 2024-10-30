@@ -18,17 +18,12 @@ const runGame = (description, generateRound) => {
       successRounds += 1;
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${solution}'.`);
-      break;
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
   }
 
-  if (successRounds === roundCount) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}!`);
-  }
+  console.log(`Congratulations, ${userName}!`);
 };
 
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-export { runGame, getRandomNumber };
+export default runGame;

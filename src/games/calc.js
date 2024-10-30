@@ -1,8 +1,27 @@
-import { runGame, getRandomNumber } from '../index.js';
+import runGame from '../index.js';
+import getRandomNumber from '../randomizer.js';
 
 const description = 'What is the result of the expression?';
 
-const run = () => {
+const calculate = (operand1, operand2, operation) => {
+  let solution;
+  switch (operation) {
+    case '+':
+      solution = operand1 + operand2;
+      break;
+    case '-':
+      solution = operand1 - operand2;
+      break;
+    case '*':
+      solution = operand1 * operand2;
+      break;
+    default:
+      throw new Error(`Unknown operation: '${operation}'!`);
+  }
+  return solution;
+};
+
+const runCalcGame = () => {
   const generateRound = () => {
     let solution = 0;
     const minValue = 1;
@@ -12,20 +31,8 @@ const run = () => {
     const number1 = getRandomNumber(minValue, maxValue);
     const number2 = getRandomNumber(minValue, maxValue);
     const action = actions[getRandomNumber(0, actions.length - 1)];
-
-    switch (action) {
-      case '+':
-        solution = number1 + number2;
-        break;
-      case '-':
-        solution = number1 - number2;
-        break;
-      case '*':
-        solution = number1 * number2;
-        break;
-      default:
-        break;
-    }
+    
+    solution = calculate(number1, number2, action);
 
     const question = `${number1} ${action} ${number2}`;
 
@@ -35,4 +42,4 @@ const run = () => {
   runGame(description, generateRound);
 };
 
-export default run;
+export default runCalcGame;

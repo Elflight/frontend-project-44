@@ -1,8 +1,9 @@
-import { runGame, getRandomNumber } from '../index.js';
+import runGame from '../index.js';
+import getRandomNumber from '../randomizer.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const run = () => {
+const runPrimeGame = () => {
   const isPrime = (num) => {
     if (num < 2) {
       return false;
@@ -30,4 +31,4 @@ const run = () => {
   runGame(description, generateRound);
 };
 
-export default run;
+export default runPrimeGame;

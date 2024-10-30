@@ -1,8 +1,9 @@
-import { runGame, getRandomNumber } from '../index.js';
+import runGame from '../index.js';
+import getRandomNumber from '../randomizer.js';
 
 const description = 'What number is missing in the progression?';
 
-const run = () => {
+const runProgressionGame = () => {
   const generateProgression = (startNumber, step, progressionLength) => {
     const arProgression = [];
     for (let i = 0; i < progressionLength; i += 1) {
@@ -40,4 +41,4 @@ const run = () => {
   runGame(description, generateRound);
 };
 
-export default run;
+export default runProgressionGame;
