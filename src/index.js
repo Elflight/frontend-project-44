@@ -7,7 +7,6 @@ const runGame = (description, generateRound) => {
   console.log(description);
 
   const roundCount = 3;
-  let successRounds = 0;
 
   for (let i = 0; i < roundCount; i += 1) {
     const [gameQuestion, solution] = generateRound();
@@ -15,7 +14,6 @@ const runGame = (description, generateRound) => {
 
     if (String(answer) === String(solution)) {
       console.log('Correct!');
-      successRounds += 1;
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${solution}'.`);
       console.log(`Let's try again, ${userName}!`);

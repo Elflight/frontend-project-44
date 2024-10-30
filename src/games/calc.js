@@ -31,7 +31,6 @@ const runCalcGame = () => {
     const number1 = getRandomNumber(minValue, maxValue);
     const number2 = getRandomNumber(minValue, maxValue);
     const action = actions[getRandomNumber(0, actions.length - 1)];
-    
     solution = calculate(number1, number2, action);
 
     const question = `${number1} ${action} ${number2}`;
